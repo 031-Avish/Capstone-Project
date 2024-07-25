@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\interfaces\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\interfaces\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,68 +19,100 @@
       "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\userdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\pizzastoreapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\pizzastoreapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\controllers\\userloginregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\controllers\\userloginregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\interfaces\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\interfaces\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\pizza.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\pizza.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\interfaces\\loginreturndto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\interfaces\\loginreturndto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\topping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\topping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\pizzatopping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\pizzatopping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\errormodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\errormodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\size.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\size.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\pizzacrust.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\pizzacrust.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\repositories\\userdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\repositories\\userdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\crust.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\crust.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\contexts\\pizzaappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\contexts\\pizzaappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\beverage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\beverage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\interfaces\\iuserdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\interfaces\\iuserdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\interfaces\\userregisterreturndto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\interfaces\\userregisterreturndto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\ordertopping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\ordertopping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\orderbeverage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\orderbeverage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\interfaces\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\interfaces\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\cartitemtopping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\cartitemtopping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\beverage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\beverage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\crust.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\crust.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\ordertopping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\ordertopping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\pizza.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\pizza.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\size.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\size.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\topping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\topping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|c:\\users\\vc\\desktop\\presidio\\capstoneproject\\capstone-project\\pizzastoreappsolution\\pizzastoreapp\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34C50ECC-B5FF-4816-B60D-6E96497A13FA}|PizzaStoreApp\\PizzaStoreApp.csproj|solutionrelative:pizzastoreapp\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,242 +122,8 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\User.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\User.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\User.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwAcAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:57:15.745Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserDetail.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\UserDetail.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\UserDetail.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\UserDetail.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\UserDetail.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:51:56.394Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Payment.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Payment.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Payment.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Payment.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\Payment.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:49:37.312Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "CartItem.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\CartItem.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\CartItem.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\CartItem.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\CartItem.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:49:11.783Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Cart.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Cart.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Cart.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Cart.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\Cart.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:48:58.203Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "OrderBeverage.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\OrderBeverage.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\OrderBeverage.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\OrderBeverage.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\OrderBeverage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:48:38.205Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "OrderTopping.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\OrderTopping.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\OrderTopping.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\OrderTopping.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\OrderTopping.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:48:16.575Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "OrderDetail.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\OrderDetail.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\OrderDetail.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\OrderDetail.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\OrderDetail.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:48:01.673Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Order.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Order.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Order.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\Order.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:47:31.659Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Beverage.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Beverage.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Beverage.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Beverage.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\Beverage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:47:24.726Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Crust.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Crust.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Crust.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Crust.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\Crust.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:46:49.013Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PizzaCrust.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\PizzaCrust.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\PizzaCrust.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\PizzaCrust.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\PizzaCrust.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:46:30.829Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Size.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Size.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Size.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Size.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\Size.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:45:56.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PizzaTopping.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\PizzaTopping.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\PizzaTopping.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\PizzaTopping.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\PizzaTopping.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:45:11.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Topping.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Topping.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Topping.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Topping.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\Topping.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:44:45.081Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Pizza.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Pizza.cs",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Pizza.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Pizza.cs",
-              "RelativeToolTip": "PizzaStoreApp\\Models\\Pizza.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T11:43:48.605Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\appsettings.json",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\appsettings.json",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\appsettings.json",
-              "RelativeToolTip": "PizzaStoreApp\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-23T11:42:32.625Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PizzaStoreApp",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\PizzaStoreApp.csproj",
-              "RelativeDocumentMoniker": "PizzaStoreApp\\PizzaStoreApp.csproj",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\PizzaStoreApp.csproj",
-              "RelativeToolTip": "PizzaStoreApp\\PizzaStoreApp.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-07-23T11:40:14.363Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -325,6 +131,358 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ErrorModel.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\ErrorModel.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\ErrorModel.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\ErrorModel.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\ErrorModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T06:53:46.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserLoginRegisterController.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Controllers\\UserLoginRegisterController.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Controllers\\UserLoginRegisterController.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Controllers\\UserLoginRegisterController.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Controllers\\UserLoginRegisterController.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAuwB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T06:52:47.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ITokenService.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Interfaces\\ITokenService.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Interfaces\\ITokenService.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Interfaces\\ITokenService.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Interfaces\\ITokenService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T06:36:20.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IUserDetailRepository.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Interfaces\\IUserDetailRepository.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Interfaces\\IUserDetailRepository.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Interfaces\\IUserDetailRepository.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Interfaces\\IUserDetailRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T04:51:19.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PizzaAppContext.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Contexts\\PizzaAppContext.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Contexts\\PizzaAppContext.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Contexts\\PizzaAppContext.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Contexts\\PizzaAppContext.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAzwCcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T04:40:54.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserDetailRepository.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Repositories\\UserDetailRepository.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Repositories\\UserDetailRepository.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Repositories\\UserDetailRepository.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Repositories\\UserDetailRepository.cs",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAkwHYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T04:37:54.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Services\\UserService.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Services\\UserService.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAYwD8AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T04:17:01.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Services\\TokenService.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Services\\TokenService.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Services\\TokenService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T11:50:42.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UserRegisterReturnDTO.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Interfaces\\UserRegisterReturnDTO.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Interfaces\\UserRegisterReturnDTO.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Interfaces\\UserRegisterReturnDTO.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Interfaces\\UserRegisterReturnDTO.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T11:15:17.683Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginReturnDTO.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Interfaces\\LoginReturnDTO.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Interfaces\\LoginReturnDTO.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Interfaces\\LoginReturnDTO.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Interfaces\\LoginReturnDTO.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T11:13:10.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserRegisterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Interfaces\\UserRegisterDTO.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Interfaces\\UserRegisterDTO.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Interfaces\\UserRegisterDTO.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Interfaces\\UserRegisterDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T11:11:47.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserLoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Interfaces\\UserLoginDTO.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Interfaces\\UserLoginDTO.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Interfaces\\UserLoginDTO.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Interfaces\\UserLoginDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T11:10:28.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Interfaces\\IUserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T11:09:28.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Program.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Program.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Program.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Program.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAgwB0AAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T06:09:48.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CartItemTopping.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\CartItemTopping.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\CartItemTopping.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\CartItemTopping.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\CartItemTopping.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T05:19:44.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\User.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\User.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T11:57:15.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserDetail.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\UserDetail.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\UserDetail.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\UserDetail.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\UserDetail.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T11:51:56.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Payment.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Payment.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\Payment.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAowBcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T11:49:37.312Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\CartItem.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\CartItem.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAwwAsAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T11:49:11.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Cart.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Cart.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\Cart.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T11:48:58.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "OrderTopping.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\OrderTopping.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\OrderTopping.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\OrderTopping.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\OrderTopping.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T11:48:16.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "OrderDetail.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\OrderDetail.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\OrderDetail.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\OrderDetail.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\OrderDetail.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T11:48:01.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Order.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\Order.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T11:47:31.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Beverage.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Beverage.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Beverage.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Beverage.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\Beverage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T11:47:24.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Crust.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Crust.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Crust.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Crust.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\Crust.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T11:46:49.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Size.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Size.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Size.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Size.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\Size.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T11:45:56.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Topping.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Topping.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Topping.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Topping.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\Topping.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T11:44:45.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Pizza.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Pizza.cs",
+              "RelativeDocumentMoniker": "PizzaStoreApp\\Models\\Pizza.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\presidio\\CapstoneProject\\Capstone-Project\\PizzaStoreAppSolution\\PizzaStoreApp\\Models\\Pizza.cs",
+              "RelativeToolTip": "PizzaStoreApp\\Models\\Pizza.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T11:43:48.605Z"
             }
           ]
         }

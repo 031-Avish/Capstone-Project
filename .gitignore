@@ -1,0 +1,75 @@
+# .NET Core build artifacts
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.sln
+*.csproj.user
+*.userprefs
+
+# NuGet packages
+*.nuget.props
+*.nuget.targets
+packages/
+
+# Build results
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.dll
+*.exe
+*.pdb
+*.zip
+*.rar
+*.7z
+*.gz
+*.tar
+*.bz2
+*.xap
+*.xapdeploy
+*.swp
+*.swo
+*.sln.docstates
+
+# Publish profiles
+*.pubxml
+*.publishproj
+
+# Other
+_ReSharper*/
+*.bak
+*.cache
+*.log
+*.vspscc
+*.vssscc
+*.psess
+*.vsp
+*.vspx
+*.user
+*.suo
+*.cache
+*.sln.docstates
+*.dotCover
+*.dotSettings.user
+*.sln.ide
+*.sln.ide-shm
+*.sln.ide-wal
+*.suo
+*.userprefs
+*.vscode
+.vscode/
