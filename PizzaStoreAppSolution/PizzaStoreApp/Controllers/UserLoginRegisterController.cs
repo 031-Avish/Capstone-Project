@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PizzaStoreApp.Exceptions.RepositoriesExceptions;
+using PizzaStoreApp.Exceptions.ServiceException;
 using PizzaStoreApp.Interfaces;
 using PizzaStoreApp.Models;
-using PizzaStoreApp.Repositories;
-using PizzaStoreApp.Services;
+using PizzaStoreApp.Models.DTOs.loginRegisterDTO;
 
 namespace PizzaStoreApp.Controllers
 {
@@ -102,6 +103,11 @@ namespace PizzaStoreApp.Controllers
             {
                 _logger.LogError(ex, "UnauthorizedUserException encountered during user login.");
                 return Unauthorized(new ErrorModel(401, ex.Message));
+            }
+            catch(NotPresentException ex)
+            {
+                _logger.LogError(ex, "NotPresentException encountered during user login.");
+                return NotFound(new ErrorModel(404, ex.Message));
             }
             catch (UnableToLoginException ex)
             {
