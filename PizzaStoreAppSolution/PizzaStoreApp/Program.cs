@@ -28,10 +28,28 @@ namespace PizzaStoreApp
             builder.Services.AddScoped<IRepository<int, User>, UserRepository>();
             builder.Services.AddScoped<IRepository<int, UserDetail>, UserDetailRepository>();
             builder.Services.AddScoped<IUserDetailRepository, UserDetailRepository>();
+            builder.Services.AddScoped<IRepository<int, Pizza>, PizzaRepository>();
+            builder.Services.AddScoped<IRepository<int, Order>, OrderRepository>();
+            builder.Services.AddScoped<IRepository<int, OrderDetail>, OrderDetailRepository>();
+            builder.Services.AddScoped<IRepository<int, OrderTopping>, OrderToppingRepository>();
+            builder.Services.AddScoped<IRepository<int,Cart>, CartRepository>();
+            builder.Services.AddScoped<IRepository<int, CartItem>, CartItemRepository>();
+            builder.Services.AddScoped<IRepository<int, CartItemTopping>, CartItemToppingRepository>();
+            builder.Services.AddScoped<IRepository<int, Topping>, ToppingRepository>();
+            builder.Services.AddScoped<IRepository<int, Size>, SizeRepository>();
+            builder.Services.AddScoped<IRepository<int, Crust>, CrustRepository>();
+            builder.Services.AddScoped<IRepository<int,Beverage>, BeverageRepository>();
+
 
             builder.Services.AddScoped<PizzaAppContext, PizzaAppContext>();
             builder.Services.AddScoped<ITokenService, TokenService>();
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IPizzaService, PizzaSevice>();
+            builder.Services.AddScoped<IToppingService,ToppingService>();
+            builder.Services.AddScoped<IBeverageService, BeverageService>();
+            builder.Services.AddScoped<ICartService, CartService>();
+            builder.Services.AddScoped<IOrderService, OrderService>();
+
 
             var app = builder.Build();
 

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PizzaStoreApp.Migrations
 {
-    public partial class init : Migration
+    public partial class first : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,9 @@ namespace PizzaStoreApp.Migrations
                     BeverageId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false)
+                    Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsAvailable = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -79,7 +81,9 @@ namespace PizzaStoreApp.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ToppingName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     IsVegetarian = table.Column<bool>(type: "bit", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false)
+                    Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    IsAvailable = table.Column<bool>(type: "bit", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -129,7 +133,8 @@ namespace PizzaStoreApp.Migrations
                     CartId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -173,12 +178,13 @@ namespace PizzaStoreApp.Migrations
                     CartItemId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CartId = table.Column<int>(type: "int", nullable: false),
-                    PizzaId = table.Column<int>(type: "int", nullable: false),
-                    BeverageId = table.Column<int>(type: "int", nullable: false),
-                    SizeId = table.Column<int>(type: "int", nullable: false),
-                    CrustId = table.Column<int>(type: "int", nullable: false),
+                    PizzaId = table.Column<int>(type: "int", nullable: true),
+                    BeverageId = table.Column<int>(type: "int", nullable: true),
+                    SizeId = table.Column<int>(type: "int", nullable: true),
+                    CrustId = table.Column<int>(type: "int", nullable: true),
                     Quantity = table.Column<int>(type: "int", nullable: false),
-                    SubTotal = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false)
+                    SubTotal = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    DiscountPercent = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -187,8 +193,7 @@ namespace PizzaStoreApp.Migrations
                         name: "FK_CartItems_Beverages_BeverageId",
                         column: x => x.BeverageId,
                         principalTable: "Beverages",
-                        principalColumn: "BeverageId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "BeverageId");
                     table.ForeignKey(
                         name: "FK_CartItems_Carts_CartId",
                         column: x => x.CartId,
@@ -199,20 +204,17 @@ namespace PizzaStoreApp.Migrations
                         name: "FK_CartItems_Crusts_CrustId",
                         column: x => x.CrustId,
                         principalTable: "Crusts",
-                        principalColumn: "CrustId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "CrustId");
                     table.ForeignKey(
                         name: "FK_CartItems_Pizzas_PizzaId",
                         column: x => x.PizzaId,
                         principalTable: "Pizzas",
-                        principalColumn: "PizzaId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "PizzaId");
                     table.ForeignKey(
                         name: "FK_CartItems_Sizes_SizeId",
                         column: x => x.SizeId,
                         principalTable: "Sizes",
-                        principalColumn: "SizeId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "SizeId");
                 });
 
             migrationBuilder.CreateTable(
@@ -222,10 +224,10 @@ namespace PizzaStoreApp.Migrations
                     OrderDetailId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     OrderId = table.Column<int>(type: "int", nullable: false),
-                    PizzaId = table.Column<int>(type: "int", nullable: false),
-                    SizeId = table.Column<int>(type: "int", nullable: false),
-                    CrustId = table.Column<int>(type: "int", nullable: false),
-                    BeverageId = table.Column<int>(type: "int", nullable: false),
+                    PizzaId = table.Column<int>(type: "int", nullable: true),
+                    SizeId = table.Column<int>(type: "int", nullable: true),
+                    CrustId = table.Column<int>(type: "int", nullable: true),
+                    BeverageId = table.Column<int>(type: "int", nullable: true),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     SubTotal = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false)
                 },
@@ -236,14 +238,12 @@ namespace PizzaStoreApp.Migrations
                         name: "FK_OrderDetails_Beverages_BeverageId",
                         column: x => x.BeverageId,
                         principalTable: "Beverages",
-                        principalColumn: "BeverageId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "BeverageId");
                     table.ForeignKey(
                         name: "FK_OrderDetails_Crusts_CrustId",
                         column: x => x.CrustId,
                         principalTable: "Crusts",
-                        principalColumn: "CrustId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "CrustId");
                     table.ForeignKey(
                         name: "FK_OrderDetails_Orders_OrderId",
                         column: x => x.OrderId,
@@ -254,14 +254,12 @@ namespace PizzaStoreApp.Migrations
                         name: "FK_OrderDetails_Pizzas_PizzaId",
                         column: x => x.PizzaId,
                         principalTable: "Pizzas",
-                        principalColumn: "PizzaId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "PizzaId");
                     table.ForeignKey(
                         name: "FK_OrderDetails_Sizes_SizeId",
                         column: x => x.SizeId,
                         principalTable: "Sizes",
-                        principalColumn: "SizeId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "SizeId");
                 });
 
             migrationBuilder.CreateTable(
@@ -321,7 +319,8 @@ namespace PizzaStoreApp.Migrations
                     OrderToppingId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     OrderDetailId = table.Column<int>(type: "int", nullable: false),
-                    ToppingId = table.Column<int>(type: "int", nullable: false)
+                    ToppingId = table.Column<int>(type: "int", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -338,6 +337,62 @@ namespace PizzaStoreApp.Migrations
                         principalTable: "Toppings",
                         principalColumn: "ToppingId",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Beverages",
+                columns: new[] { "BeverageId", "Image", "IsAvailable", "Name", "Price" },
+                values: new object[,]
+                {
+                    { 1, "coca_cola.jpg", true, "Coca Cola", 40.0m },
+                    { 2, "pepsi.jpg", true, "Pepsi", 45.0m },
+                    { 3, "sprite.jpg", true, "Sprite", 45.0m },
+                    { 4, "fanta.jpg", true, "Fanta", 40.0m },
+                    { 5, "mountain_dew.jpg", true, "Mountain Dew", 50.0m }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Crusts",
+                columns: new[] { "CrustId", "CrustName", "PriceMultiplier" },
+                values: new object[,]
+                {
+                    { 1, "Hand Tossed", 1.0m },
+                    { 2, "Cheese Burst", 1.2m },
+                    { 3, "Wheat Thin Crust", 1.1m },
+                    { 4, "New Hand Tossed", 1.0m },
+                    { 5, "Fresh Pan Pizza", 1.5m }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Pizzas",
+                columns: new[] { "PizzaId", "BasePrice", "CreatedAt", "Description", "ImageUrl", "IsAvailable", "IsVegetarian", "Name", "UpdatedAt" },
+                values: new object[,]
+                {
+                    { 1, 200.00m, new DateTime(2024, 7, 29, 15, 14, 57, 34, DateTimeKind.Local).AddTicks(1021), "Classic delight with 100% real mozzarella cheese", "margherita.jpg", true, true, "Margherita", new DateTime(2024, 7, 29, 15, 14, 57, 34, DateTimeKind.Local).AddTicks(1022) },
+                    { 2, 220.00m, new DateTime(2024, 7, 29, 15, 14, 57, 34, DateTimeKind.Local).AddTicks(1026), "A classic American taste! Relish the delectable flavor of Chicken Pepperoni, topped with extra cheese", "pepperoni.jpg", true, false, "Pepperoni", new DateTime(2024, 7, 29, 15, 14, 57, 34, DateTimeKind.Local).AddTicks(1027) },
+                    { 3, 260.00m, new DateTime(2024, 7, 29, 15, 14, 57, 34, DateTimeKind.Local).AddTicks(1031), "Loaded with crunchy onions, crisp capsicum, juicy tomatoes and jalapeno with extra cheese", "veggie_supreme.jpg", true, true, "Veggie Supreme", new DateTime(2024, 7, 29, 15, 14, 57, 34, DateTimeKind.Local).AddTicks(1032) }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Sizes",
+                columns: new[] { "SizeId", "SizeMultiplier", "SizeName" },
+                values: new object[,]
+                {
+                    { 1, 1.0m, "Small" },
+                    { 2, 1.5m, "Medium" },
+                    { 3, 2.0m, "Large" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Toppings",
+                columns: new[] { "ToppingId", "Image", "IsAvailable", "IsVegetarian", "Price", "ToppingName" },
+                values: new object[,]
+                {
+                    { 1, "onion.jpg", true, true, 60.0m, "Onion" },
+                    { 2, "capsicum.jpg", true, true, 40.0m, "Capsicum" },
+                    { 3, "mushroom.jpg", true, true, 60.0m, "Mushroom" },
+                    { 4, "chicken_sausage.jpg", true, false, 70.0m, "Chicken Sausage" },
+                    { 5, "pepperoni.jpg", true, false, 80.0m, "Pepperoni" }
                 });
 
             migrationBuilder.CreateIndex(
