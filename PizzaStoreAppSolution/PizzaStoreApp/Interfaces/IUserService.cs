@@ -1,4 +1,6 @@
-﻿namespace PizzaStoreApp.Interfaces
+﻿using PizzaStoreApp.Models.DTOs.loginRegisterDTO;
+
+namespace PizzaStoreApp.Interfaces
 {
     public interface IUserService
     {
