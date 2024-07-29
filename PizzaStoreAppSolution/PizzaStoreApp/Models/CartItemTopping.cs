@@ -17,6 +17,5 @@ namespace PizzaStoreApp.Models
         public Topping Topping { get; set; }
 
         public int Quantity { get; set; }
-
     }
 }

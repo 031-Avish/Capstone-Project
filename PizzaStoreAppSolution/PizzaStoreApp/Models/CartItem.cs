@@ -7,27 +7,38 @@ namespace PizzaStoreApp.Models
     {
         [Key]
         public int CartItemId { get; set; }
+
         [Required]
         public int CartId { get; set; }
         [ForeignKey("CartId")]
         public Cart Cart { get; set; }
+
         public int? PizzaId { get; set; }
         [ForeignKey("PizzaId")]
-        public Pizza Pizza { get; set; }
+        public Pizza? Pizza { get; set; }
+
         public int? BeverageId { get; set; }
         [ForeignKey("BeverageId")]
-        public Beverage Beverage { get; set; }
+        public Beverage? Beverage { get; set; }
+
         public int? SizeId { get; set; }
         [ForeignKey("SizeId")]
-        public Size Size { get; set; }
+        public Size? Size { get; set; }
+
         public int? CrustId { get; set; }
         [ForeignKey("CrustId")]
-        public Crust Crust { get; set; }
+        public Crust? Crust { get; set; }
+
         [Required]
         [Range(1, int.MaxValue)]
         public int Quantity { get; set; }
+
         [Required]
         [Range(0, double.MaxValue)]
         public decimal SubTotal { get; set; }
+
+        public decimal DiscountPercent { get; set; } = 0;
+
+        public ICollection<CartItemTopping> CartItemToppings { get; set; }
     }
 }

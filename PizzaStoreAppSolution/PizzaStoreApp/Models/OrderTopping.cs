@@ -15,5 +15,7 @@ namespace PizzaStoreApp.Models
         public int ToppingId { get; set; }
         [ForeignKey("ToppingId")]
         public Topping Topping { get; set; }
+
+        public int Quantity { get; set; }
     }
 }

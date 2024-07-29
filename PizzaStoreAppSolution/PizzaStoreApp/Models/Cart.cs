@@ -12,5 +12,7 @@ namespace PizzaStoreApp.Models
         [ForeignKey("UserId")]
         public UserDetail User { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public Decimal TotalPrice { get; set; }
+        public ICollection<CartItem> CartItems { get; set; }
     }
 }

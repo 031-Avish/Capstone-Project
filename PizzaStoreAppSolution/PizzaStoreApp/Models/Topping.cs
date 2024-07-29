@@ -13,5 +13,7 @@ namespace PizzaStoreApp.Models
         [Required]
         [Range(0, double.MaxValue)]
         public decimal Price { get; set; }
+        public bool IsAvailable { get; set; } = true;
+        public string Image { get; set; } = "";
     }
 }

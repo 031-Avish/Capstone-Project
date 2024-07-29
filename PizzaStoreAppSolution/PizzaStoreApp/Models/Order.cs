@@ -21,5 +21,7 @@ namespace PizzaStoreApp.Models
         [Required]
         public bool IsPickup { get; set; } // True for pickup, false for delivery
         public string? DeliveryAddress { get; set; } // Null if pickup
+
+        public ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

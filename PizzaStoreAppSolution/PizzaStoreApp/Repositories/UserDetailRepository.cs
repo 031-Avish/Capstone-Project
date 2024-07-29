@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PizzaStoreApp.Contexts;
+using PizzaStoreApp.Exceptions.RepositoriesExceptions;
 using PizzaStoreApp.Interfaces;
 using PizzaStoreApp.Models;
 
@@ -108,7 +109,7 @@ namespace PizzaStoreApp.Repositories
             catch (NotPresentException ex)
             {
                 _logger.LogError(ex, "Error occurred while retrieving user detail.");
-                throw new UserDetailRepositoryException("Error occurred while retrieving user detail: " + ex.Message, ex);
+                throw;
             }
             catch (Exception ex)
             {
