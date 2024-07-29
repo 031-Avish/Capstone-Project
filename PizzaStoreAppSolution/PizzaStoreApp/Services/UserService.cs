@@ -1,6 +1,8 @@
-﻿using PizzaStoreApp.Interfaces;
+﻿using PizzaStoreApp.Exceptions.RepositoriesExceptions;
+using PizzaStoreApp.Exceptions.ServiceException;
+using PizzaStoreApp.Interfaces;
 using PizzaStoreApp.Models;
-using PizzaStoreApp.Repositories;
+using PizzaStoreApp.Models.DTOs.loginRegisterDTO;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -46,6 +48,11 @@ namespace PizzaStoreApp.Services
             catch (UnauthorizedUserException ex)
             {
                 _logger.LogError(ex, "UnauthorizedUserException for user email {Email}.", userLoginDTO.Email);
+                throw;
+            }
+            catch(NotPresentException ex)
+            {
+                _logger.LogError(ex, "NotPresentException for user email {Email}.", userLoginDTO.Email);
                 throw;
             }
             catch (UserDetailRepositoryException ex)
