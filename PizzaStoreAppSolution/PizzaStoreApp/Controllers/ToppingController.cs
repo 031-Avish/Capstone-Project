@@ -23,6 +23,11 @@ namespace PizzaStoreApp.Controllers
             _logger = logger;
         }
 
+        #region GetAllToppings
+        /// <summary>
+        /// Retrieves all available toppings.
+        /// </summary>
+        /// <returns>List of all toppings.</returns>
         [HttpGet("all")]
         [ProducesResponseType(typeof(List<ToppingReturnDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
@@ -55,7 +60,14 @@ namespace PizzaStoreApp.Controllers
                 return StatusCode(500, new ErrorModel(500, "Unexpected Error: " + ex.Message));
             }
         }
+        #endregion
 
+        #region GetToppingById
+        /// <summary>
+        /// Retrieves a topping by its ID.
+        /// </summary>
+        /// <param name="toppingId">ID of the topping to retrieve.</param>
+        /// <returns>Details of the topping with the specified ID.</returns>
         [HttpGet("{toppingId}")]
         [ProducesResponseType(typeof(ToppingReturnDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
@@ -65,12 +77,12 @@ namespace PizzaStoreApp.Controllers
             try
             {
                 var topping = await _toppingService.GetToppingByToppingId(toppingId);
-                _logger.LogInformation("Retrieved topping with id {ToppingId} successfully.", toppingId);
+                _logger.LogInformation("Retrieved topping with ID {ToppingId} successfully.", toppingId);
                 return Ok(topping);
             }
             catch (NotFoundException ex)
             {
-                _logger.LogWarning("No topping found with id {ToppingId}: {Message}", toppingId, ex.Message);
+                _logger.LogWarning("No topping found with ID {ToppingId}: {Message}", toppingId, ex.Message);
                 return NotFound(new ErrorModel(404, ex.Message));
             }
             catch (ToppingRepositoryException ex)
@@ -89,5 +101,6 @@ namespace PizzaStoreApp.Controllers
                 return StatusCode(500, new ErrorModel(500, "Unexpected Error: " + ex.Message));
             }
         }
+        #endregion
     }
 }

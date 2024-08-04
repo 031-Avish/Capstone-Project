@@ -2,23 +2,43 @@
 using PizzaStoreApp.Models;
 using Microsoft.EntityFrameworkCore;
 using PizzaStoreApp.Contexts;
-using System.Runtime.Serialization;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using PizzaStoreApp.Exceptions.RepositoriesExceptions;
-
 
 namespace PizzaStoreApp.Repositories
 {
+    /// <summary>
+    /// Repository for managing crusts.
+    /// </summary>
     public class CrustRepository : IRepository<int, Crust>
     {
         private readonly PizzaAppContext _context;
         private readonly ILogger<CrustRepository> _logger;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CrustRepository"/> class.
+        /// </summary>
+        /// <param name="context">The database context.</param>
+        /// <param name="logger">The logger instance.</param>
         public CrustRepository(PizzaAppContext context, ILogger<CrustRepository> logger)
         {
             _context = context;
             _logger = logger;
         }
 
+        #region Add Method
+
+        /// <summary>
+        /// Adds a new crust to the repository.
+        /// </summary>
+        /// <param name="item">The crust to add.</param>
+        /// <returns>The added crust.</returns>
+        /// <exception cref="DuplicateCrustException">Thrown when a crust with the same name already exists.</exception>
+        /// <exception cref="CrustRepositoryException">Thrown when an error occurs while adding the crust.</exception>
         public async Task<Crust> Add(Crust item)
         {
             try
@@ -47,6 +67,17 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region DeleteByKey Method
+
+        /// <summary>
+        /// Deletes a crust by its key.
+        /// </summary>
+        /// <param name="key">The key of the crust to delete.</param>
+        /// <returns>The deleted crust.</returns>
+        /// <exception cref="CrustNotFoundException">Thrown when the crust is not found.</exception>
+        /// <exception cref="CrustRepositoryException">Thrown when an error occurs while deleting the crust.</exception>
         public async Task<Crust> DeleteByKey(int key)
         {
             try
@@ -75,6 +106,15 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region GetAll Method
+
+        /// <summary>
+        /// Gets all crusts.
+        /// </summary>
+        /// <returns>A list of all crusts.</returns>
+        /// <exception cref="CrustRepositoryException">Thrown when an error occurs while getting the crusts.</exception>
         public async Task<IEnumerable<Crust>> GetAll()
         {
             try
@@ -96,6 +136,16 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region GetByKey Method
+
+        /// <summary>
+        /// Gets a crust by its key.
+        /// </summary>
+        /// <param name="key">The key of the crust to retrieve.</param>
+        /// <returns>The retrieved crust.</returns>
+        /// <exception cref="CrustRepositoryException">Thrown when an error occurs while getting the crust.</exception>
         public async Task<Crust> GetByKey(int key)
         {
             try
@@ -117,6 +167,17 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region Update Method
+
+        /// <summary>
+        /// Updates a crust.
+        /// </summary>
+        /// <param name="item">The crust to update.</param>
+        /// <returns>The updated crust.</returns>
+        /// <exception cref="CrustNotFoundException">Thrown when the crust is not found.</exception>
+        /// <exception cref="CrustRepositoryException">Thrown when an error occurs while updating the crust.</exception>
         public async Task<Crust> Update(Crust item)
         {
             try
@@ -140,5 +201,7 @@ namespace PizzaStoreApp.Repositories
                 throw new CrustRepositoryException("Error occurred while updating crust." + ex.Message, ex);
             }
         }
+
+        #endregion
     }
 }

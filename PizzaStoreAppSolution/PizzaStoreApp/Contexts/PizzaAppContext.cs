@@ -22,6 +22,7 @@ namespace PizzaStoreApp.Contexts
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
         public DbSet<CartItemTopping> CartItemToppings { get; set; }
+        public DbSet<Payment> Payments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -39,44 +40,7 @@ namespace PizzaStoreApp.Contexts
             modelBuilder.Entity<CartItem>().Property(ci => ci.DiscountPercent).HasPrecision(18, 2);
 
             // Seed data
-            modelBuilder.Entity<Pizza>().HasData(
-                new Pizza
-                {
-                    PizzaId = 1,
-                    Name = "Margherita",
-                    Description = "Classic delight with 100% real mozzarella cheese",
-                    BasePrice = 200.00m,
-                    IsAvailable = true,
-                    IsVegetarian = true,
-                    ImageUrl = "margherita.jpg",
-                    CreatedAt = DateTime.Now,
-                    UpdatedAt = DateTime.Now
-                },
-                new Pizza
-                {
-                    PizzaId = 2,
-                    Name = "Pepperoni",
-                    Description = "A classic American taste! Relish the delectable flavor of Chicken Pepperoni, topped with extra cheese",
-                    BasePrice = 220.00m,
-                    IsAvailable = true,
-                    IsVegetarian = false,
-                    ImageUrl = "pepperoni.jpg",
-                    CreatedAt = DateTime.Now,
-                    UpdatedAt = DateTime.Now
-                },
-                new Pizza
-                {
-                    PizzaId = 3,
-                    Name = "Veggie Supreme",
-                    Description = "Loaded with crunchy onions, crisp capsicum, juicy tomatoes and jalapeno with extra cheese",
-                    BasePrice = 260.00m,
-                    IsAvailable = true,
-                    IsVegetarian = true,
-                    ImageUrl = "veggie_supreme.jpg",
-                    CreatedAt = DateTime.Now,
-                    UpdatedAt = DateTime.Now
-                }
-            );
+           
 
             modelBuilder.Entity<Size>().HasData(
                 new Size
@@ -131,7 +95,6 @@ namespace PizzaStoreApp.Contexts
                     PriceMultiplier = 1.5m
                 }
             );
-
             modelBuilder.Entity<Topping>().HasData(
                 new Topping
                 {
@@ -175,43 +138,6 @@ namespace PizzaStoreApp.Contexts
                 }
             );
 
-            modelBuilder.Entity<Beverage>().HasData(
-                new Beverage
-                {
-                    BeverageId = 1,
-                    Name = "Coca Cola",
-                    Price = 40.0m,
-                    Image = "coca_cola.jpg"
-                },
-                new Beverage
-                {
-                    BeverageId = 2,
-                    Name = "Pepsi",
-                    Price = 45.0m,
-                    Image = "pepsi.jpg"
-                },
-                new Beverage
-                {
-                    BeverageId = 3,
-                    Name = "Sprite",
-                    Price = 45.0m,
-                    Image = "sprite.jpg"
-                },
-                new Beverage
-                {
-                    BeverageId = 4,
-                    Name = "Fanta",
-                    Price = 40.0m,
-                    Image = "fanta.jpg"
-                },
-                new Beverage
-                {
-                    BeverageId = 5,
-                    Name = "Mountain Dew",
-                    Price = 50.0m,
-                    Image = "mountain_dew.jpg"
-                }
-            );
         }
     }
 }

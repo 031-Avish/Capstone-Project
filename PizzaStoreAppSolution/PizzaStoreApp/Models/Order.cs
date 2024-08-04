@@ -18,6 +18,7 @@ namespace PizzaStoreApp.Models
         [Required]
         [MaxLength(20)]
         public string Status { get; set; } = "Pending";
+        public string PaymentStatus { get; set; } = "Pending";
         [Required]
         public bool IsPickup { get; set; } // True for pickup, false for delivery
         public string? DeliveryAddress { get; set; } // Null if pickup

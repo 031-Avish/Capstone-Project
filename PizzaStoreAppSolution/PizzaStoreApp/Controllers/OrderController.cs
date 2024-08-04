@@ -1,14 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc;
 using PizzaStoreApp.Exceptions.RepositoriesExceptions;
-using PizzaStoreApp.Exceptions.ServiceException;
 using PizzaStoreApp.Interfaces;
 using PizzaStoreApp.Models;
-using PizzaStoreApp.Repositories;
 using PizzaStoreApp.Services;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+
 
 namespace PizzaStoreApp.Controllers
 {
@@ -203,6 +198,38 @@ namespace PizzaStoreApp.Controllers
                 return StatusCode(500, new ErrorModel(500, "Internal Server Error: " + ex.Message));
             }
             catch (Exception ex)
+            {
+                _logger.LogError("Unexpected error: {Message}", ex.Message);
+                return StatusCode(500, new ErrorModel(500, "Unexpected Error: " + ex.Message));
+            }
+        }
+        [HttpPut("updateStatus")]
+        [ProducesResponseType(typeof(OrderReturnDTO), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdateOrderStatusByAdmin(UpdateOrderDTO updateDTO)
+        {
+            try
+            {
+                var returnDTO = await _orderService.UpdateOrderStatusByAdmin(updateDTO);
+                return  Ok(returnDTO);
+            }
+            catch(OrderServiceException ex)
+            {
+                _logger.LogError("Order service error: {Message}", ex.Message);
+                return StatusCode(500, new ErrorModel(500, "Internal Server Error: " + ex.Message));
+            }
+            catch(OrderRepositoryException ex)
+            {
+                _logger.LogError("Order repository error: {Message}", ex.Message);
+                return StatusCode(500, new ErrorModel(500, "Internal Server Error: " + ex.Message));
+            }
+            catch(OrderNotFoundException ex)
+            {
+                _logger.LogWarning("Order not found: {Message}", ex.Message);
+                return NotFound(new ErrorModel(404, "Order not found: " + ex.Message));
+            }
+            catch(Exception ex)
             {
                 _logger.LogError("Unexpected error: {Message}", ex.Message);
                 return StatusCode(500, new ErrorModel(500, "Unexpected Error: " + ex.Message));

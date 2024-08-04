@@ -141,8 +141,11 @@ namespace PizzaStoreApp.Services
 
                 CartItems = returnCart.CartItems.Select(ci => new CartItemReturnDTO
                 {
+                    CartId=returnCart.CartId,
                     CartItemId = ci.CartItemId,
                     Quantity = ci.Quantity,
+                    Price = ci.SubTotal,
+                    
 
                     Crust = ci.Crust != null ? new CrustReturnDTO
                     {
@@ -166,14 +169,16 @@ namespace PizzaStoreApp.Services
                         BasePrice = ci.Pizza.BasePrice,
                         IsVegetarian = ci.Pizza.IsVegetarian,
                         CreatedAt = ci.Pizza.CreatedAt,
-                        Quantity = ci.Quantity
+                        Quantity = ci.Quantity,
+                        imageUrl= ci.Pizza.ImageUrl,
                     } : null,
 
                     Beverage = ci.Beverage != null ? new BeverageReturnDTO
                     {
                         BeverageId = (int)ci.BeverageId,
                         Name = ci.Beverage.Name,
-                        Price = ci.Beverage.Price
+                        Price = ci.Beverage.Price,
+                        Image = ci.Beverage.Image,
                     } : null,
 
                     Topping = ci.CartItemToppings != null ? ci.CartItemToppings.Select(cit => new CartToppingReturnDTO
@@ -272,6 +277,9 @@ namespace PizzaStoreApp.Services
                 
             var totalcost = await CalculatePrice((int)addToCartDTO.PizzaId, (int)addToCartDTO.SizeId, 
                                                 (int)addToCartDTO.CrustId, addToCartDTO.Quantity, addToCartDTO.ToppingIds);
+
+            // check is discount avaialble if pizza is new then discount available
+
             cartItem1.SubTotal = totalcost;
             await _cartItemRepository.Update(cartItem1);
 
@@ -375,6 +383,14 @@ namespace PizzaStoreApp.Services
             {
                 throw;
             }
+            catch(CartItemNotFoundException ex)
+            {
+                throw;
+            }
+            catch(CartItemToppingNotFoundException ex)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new CartServiceException("Error in removing from cart" + ex.Message, ex);
@@ -386,18 +402,18 @@ namespace PizzaStoreApp.Services
             try
             {
                 // get the cartitem by cartitemid
-                var cartItem = await _cartItemRepository.GetByKey(updateCartDTO.CartItemId);
-                
+                var cartItem1 = await _cartItemRepository.GetByKey(updateCartDTO.CartItemId);
+
                 if (updateCartDTO.PizzaId != null)
                 {
-                    await UpdatePizzaInCart(updateCartDTO, cartItem);
+                    await UpdatePizzaInCart(updateCartDTO, cartItem1);
                 }
                 else if (updateCartDTO.BeverageId != null)
                 {
-                    await UpdateBeverageInCart(updateCartDTO, cartItem);
+                    await UpdateBeverageInCart(updateCartDTO, cartItem1);
                 }
-                Cart cart = await _cartRepository.GetByKey(cartItem.CartId);
-                return await MapCartToReturnDTO(cart);
+                Cart cart1 = await _cartRepository.GetByKey(cartItem1.CartId);
+                return await MapCartToReturnDTO(cart1);
             }
             catch (NotFoundException ex)
             {
@@ -439,6 +455,10 @@ namespace PizzaStoreApp.Services
             {
                 throw;
             }
+            catch(CartItemAlreadyExistsException ex)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new CartServiceException("Error in updating cart" + ex.Message, ex);
@@ -457,13 +477,42 @@ namespace PizzaStoreApp.Services
             await _cartRepository.Update(cart);
         }
 
-        private async Task UpdatePizzaInCart(UpdateCartItemDTO updateCartDTO, CartItem cartItem)
+        private async Task UpdatePizzaInCart(UpdateCartItemDTO updateCartDTO, CartItem cartItem1)
         {
-            cartItem.Quantity = updateCartDTO.Quantity;
-            cartItem.PizzaId = updateCartDTO.PizzaId;
-            cartItem.SizeId = updateCartDTO.SizeId;
-            cartItem.CrustId = updateCartDTO.CrustId;
-            foreach (var topping in cartItem.CartItemToppings)
+            var cart = await _cartRepository.GetByKey(cartItem1.CartId);
+
+            var cartItem = cart.CartItems.Where(ci => ci.PizzaId == updateCartDTO.PizzaId
+                                            && ci.SizeId == updateCartDTO.SizeId
+                                            && ci.CartItemId != updateCartDTO.CartItemId 
+                                            && ci.CrustId == updateCartDTO.CrustId).FirstOrDefault();
+
+            if (cartItem != null && cartItem.CartItemId != updateCartDTO.CartItemId)
+            {
+                if (cartItem.CartItemToppings?.Count == updateCartDTO.ToppingIds?.Count)
+                {
+                    if (cartItem.CartItemToppings == null && updateCartDTO.ToppingIds == null)
+                    {
+                        throw new CartItemAlreadyExistsException("This item already exists in the cart ");
+                    }
+                    cartItem = cart.CartItems
+                        .Where(ci => ci.CartItemToppings.OrderBy(cit => cit.ToppingId).
+                        Select(cit => cit.ToppingId).SequenceEqual(updateCartDTO.ToppingIds.Keys.OrderBy(id => id))
+                        && ci.CartItemToppings.OrderBy(cit => cit.ToppingId).
+                        Select(cit => cit.Quantity).SequenceEqual(updateCartDTO.ToppingIds.OrderBy(kvp => kvp.Key)
+                        .Select(kvp => kvp.Value))).FirstOrDefault();
+                    if (cartItem != null)
+                    {
+                        throw new CartItemAlreadyExistsException("This item already exists in the cart ");
+                    }
+                }
+            }
+
+
+            cartItem1.Quantity = updateCartDTO.Quantity;
+            cartItem1.PizzaId = updateCartDTO.PizzaId;
+            cartItem1.SizeId = updateCartDTO.SizeId;
+            cartItem1.CrustId = updateCartDTO.CrustId;
+            foreach (var topping in cartItem1.CartItemToppings)
             {
                 await _cartItemToppingRepository.DeleteByKey(topping.CartItemToppingId);
             }
@@ -473,22 +522,39 @@ namespace PizzaStoreApp.Services
                 {
                     var cartItemTopping = new CartItemTopping()
                     {
-                        CartItemId = cartItem.CartItemId,
+                        CartItemId = cartItem1.CartItemId,
                         ToppingId = toppingId.Key,
                         Quantity = toppingId.Value
                     };
                     await _cartItemToppingRepository.Add(cartItemTopping);
                 }
             }
-            var oldPrice = cartItem.SubTotal;
+            var oldPrice = cartItem1.SubTotal;
             var totalcost = await CalculatePrice((int)updateCartDTO.PizzaId, (int)updateCartDTO.SizeId,
                                                                (int)updateCartDTO.CrustId, updateCartDTO.Quantity, updateCartDTO.ToppingIds);
-            cartItem.SubTotal = totalcost;
-            await _cartItemRepository.Update(cartItem);
+            cartItem1.SubTotal = totalcost;
+            await _cartItemRepository.Update(cartItem1);
 
-            var cart = await _cartRepository.GetByKey(cartItem.CartId);
-            cart.TotalPrice = cart.TotalPrice - oldPrice + totalcost;
-            await _cartRepository.Update(cart);
+            var cart1 = await _cartRepository.GetByKey(cartItem1.CartId);
+            cart1.TotalPrice = cart1.TotalPrice - oldPrice + totalcost;
+            await _cartRepository.Update(cart1);
         }
+
+        //private async Task updateAlreadyExistingPizza(CartItem oldCartItem, CartItem newCartItem,UpdateCartItemDTO updateCartItemDTO)
+        //{
+        //    oldCartItem.Quantity += updateCartItemDTO.Quantity;
+        //    var oldPrice = oldCartItem.SubTotal;
+        //    var totalcost = await CalculatePrice((int)updateCartItemDTO.PizzaId, (int)updateCartItemDTO.SizeId,
+        //                                                                      (int)updateCartItemDTO.CrustId, oldCartItem.Quantity, updateCartItemDTO.ToppingIds);
+        //    oldCartItem.SubTotal = totalcost;
+        //    await _cartItemRepository.Update(oldCartItem);
+
+        //    var cart = await _cartRepository.GetByKey(oldCartItem.CartId);
+        //    cart.TotalPrice = cart.TotalPrice - oldPrice + totalcost;
+        //    await _cartRepository.Update(cart);
+
+
+        //    await RemoveFromCart(new RemoveFromCartDTO { CartItemId = newCartItem.CartItemId, UserId = updateCartItemDTO.UserId });
+        //}
     }
 }

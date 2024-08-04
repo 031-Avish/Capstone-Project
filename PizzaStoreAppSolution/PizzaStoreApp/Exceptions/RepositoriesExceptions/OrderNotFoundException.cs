@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace PizzaStoreApp.Repositories
+namespace PizzaStoreApp.Exceptions.RepositoriesExceptions
 {
     [Serializable]
     internal class OrderNotFoundException : Exception

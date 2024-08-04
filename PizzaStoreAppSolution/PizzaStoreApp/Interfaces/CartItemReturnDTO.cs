@@ -14,5 +14,6 @@ namespace PizzaStoreApp.Interfaces
         public decimal Price { get; set; }
         public Decimal DiscountPercent { get; set; }
         public List<CartToppingReturnDTO>? Topping { get; set; }
+       
     }
 }

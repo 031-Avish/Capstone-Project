@@ -9,5 +9,7 @@ namespace PizzaStoreApp.Interfaces
         public Task<List<PizzaReturnDTO>> GetAllNewPizza();
         public Task<List<PizzaReturnDTO>> GetAllVegetarianPizza();
         public Task<List<PizzaReturnDTO>> GetMostSoldPizza();
+
+        public Task<AddPizzaReturnDTO> AddPizzaByAdmin(PizzaDTO pizzaDTO);
     }
 }

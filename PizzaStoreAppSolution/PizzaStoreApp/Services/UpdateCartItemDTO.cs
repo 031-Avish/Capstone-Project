@@ -2,6 +2,7 @@
 {
     public class UpdateCartItemDTO
     {
+        public int UserId { get; set; }
         public int CartItemId { get; set; }
         public int? PizzaId { get; set; } // Nullable for when only adding beverages
         public int? BeverageId { get; set; } // Nullable for when only adding pizzas

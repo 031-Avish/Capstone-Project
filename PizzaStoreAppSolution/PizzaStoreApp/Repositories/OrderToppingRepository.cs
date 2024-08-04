@@ -2,21 +2,42 @@
 using PizzaStoreApp.Contexts;
 using PizzaStoreApp.Interfaces;
 using PizzaStoreApp.Models;
-
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using PizzaStoreApp.Exceptions.RepositoriesExceptions;
 
 namespace PizzaStoreApp.Repositories
 {
+    /// <summary>
+    /// Repository for managing order toppings.
+    /// </summary>
     public class OrderToppingRepository : IRepository<int, OrderTopping>
     {
         private readonly PizzaAppContext _context;
         private readonly ILogger<OrderToppingRepository> _logger;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrderToppingRepository"/> class.
+        /// </summary>
+        /// <param name="context">The database context.</param>
+        /// <param name="logger">The logger instance.</param>
         public OrderToppingRepository(PizzaAppContext context, ILogger<OrderToppingRepository> logger)
         {
             _context = context;
             _logger = logger;
         }
 
+        #region Add Method
+
+        /// <summary>
+        /// Adds a new order topping to the repository.
+        /// </summary>
+        /// <param name="item">The order topping to add.</param>
+        /// <returns>The added order topping.</returns>
+        /// <exception cref="OrderToppingRepositoryException">Thrown when an error occurs while adding the order topping.</exception>
         public async Task<OrderTopping> Add(OrderTopping item)
         {
             try
@@ -33,6 +54,17 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region DeleteByKey Method
+
+        /// <summary>
+        /// Deletes an order topping by its key.
+        /// </summary>
+        /// <param name="key">The key of the order topping to delete.</param>
+        /// <returns>The deleted order topping.</returns>
+        /// <exception cref="OrderToppingNotFoundException">Thrown when the order topping is not found.</exception>
+        /// <exception cref="OrderToppingRepositoryException">Thrown when an error occurs while deleting the order topping.</exception>
         public async Task<OrderTopping> DeleteByKey(int key)
         {
             try
@@ -60,6 +92,16 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region GetAll Method
+
+        /// <summary>
+        /// Gets all order toppings from the repository.
+        /// </summary>
+        /// <returns>A list of all order toppings.</returns>
+        /// <exception cref="OrderToppingNotFoundException">Thrown when no order toppings are found.</exception>
+        /// <exception cref="OrderToppingRepositoryException">Thrown when an error occurs while getting all order toppings.</exception>
         public async Task<IEnumerable<OrderTopping>> GetAll()
         {
             try
@@ -91,6 +133,17 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region GetByKey Method
+
+        /// <summary>
+        /// Gets an order topping by its key.
+        /// </summary>
+        /// <param name="key">The key of the order topping to retrieve.</param>
+        /// <returns>The retrieved order topping.</returns>
+        /// <exception cref="OrderToppingNotFoundException">Thrown when the order topping is not found.</exception>
+        /// <exception cref="OrderToppingRepositoryException">Thrown when an error occurs while getting the order topping.</exception>
         public async Task<OrderTopping> GetByKey(int key)
         {
             try
@@ -121,6 +174,17 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region Update Method
+
+        /// <summary>
+        /// Updates an order topping in the repository.
+        /// </summary>
+        /// <param name="item">The order topping to update.</param>
+        /// <returns>The updated order topping.</returns>
+        /// <exception cref="OrderToppingNotFoundException">Thrown when the order topping is not found.</exception>
+        /// <exception cref="OrderToppingRepositoryException">Thrown when an error occurs while updating the order topping.</exception>
         public async Task<OrderTopping> Update(OrderTopping item)
         {
             try
@@ -151,5 +215,7 @@ namespace PizzaStoreApp.Repositories
                 throw new OrderToppingRepositoryException("Error in updating OrderTopping in the database: " + ex.Message, ex);
             }
         }
+
+        #endregion
     }
 }

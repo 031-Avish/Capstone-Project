@@ -2,23 +2,42 @@
 using PizzaStoreApp.Contexts;
 using PizzaStoreApp.Interfaces;
 using PizzaStoreApp.Models;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PizzaStoreApp.Exceptions.RepositoriesExceptions;
 
 namespace PizzaStoreApp.Repositories
 {
+    /// <summary>
+    /// Repository for managing orders.
+    /// </summary>
     public class OrderRepository : IRepository<int, Order>
     {
         private readonly PizzaAppContext _context;
         private readonly ILogger<OrderRepository> _logger;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrderRepository"/> class.
+        /// </summary>
+        /// <param name="context">The database context.</param>
+        /// <param name="logger">The logger instance.</param>
         public OrderRepository(PizzaAppContext context, ILogger<OrderRepository> logger)
         {
             _context = context;
             _logger = logger;
         }
 
+        #region Add Method
+
+        /// <summary>
+        /// Adds a new order to the repository.
+        /// </summary>
+        /// <param name="item">The order to add.</param>
+        /// <returns>The added order.</returns>
+        /// <exception cref="OrderRepositoryException">Thrown when an error occurs while adding the order.</exception>
         public async Task<Order> Add(Order item)
         {
             try
@@ -35,6 +54,17 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region DeleteByKey Method
+
+        /// <summary>
+        /// Deletes an order by its key.
+        /// </summary>
+        /// <param name="key">The key of the order to delete.</param>
+        /// <returns>The deleted order.</returns>
+        /// <exception cref="OrderNotFoundException">Thrown when the order is not found.</exception>
+        /// <exception cref="OrderRepositoryException">Thrown when an error occurs while deleting the order.</exception>
         public async Task<Order> DeleteByKey(int key)
         {
             try
@@ -62,6 +92,16 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region GetAll Method
+
+        /// <summary>
+        /// Gets all orders from the repository.
+        /// </summary>
+        /// <returns>A list of all orders.</returns>
+        /// <exception cref="OrderNotFoundException">Thrown when no orders are found.</exception>
+        /// <exception cref="OrderRepositoryException">Thrown when an error occurs while getting all orders.</exception>
         public async Task<IEnumerable<Order>> GetAll()
         {
             try
@@ -103,6 +143,17 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region GetByKey Method
+
+        /// <summary>
+        /// Gets an order by its key.
+        /// </summary>
+        /// <param name="key">The key of the order to retrieve.</param>
+        /// <returns>The retrieved order.</returns>
+        /// <exception cref="OrderNotFoundException">Thrown when the order is not found.</exception>
+        /// <exception cref="OrderRepositoryException">Thrown when an error occurs while getting the order.</exception>
         public async Task<Order> GetByKey(int key)
         {
             try
@@ -143,6 +194,17 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region Update Method
+
+        /// <summary>
+        /// Updates an order in the repository.
+        /// </summary>
+        /// <param name="item">The order to update.</param>
+        /// <returns>The updated order.</returns>
+        /// <exception cref="OrderNotFoundException">Thrown when the order is not found.</exception>
+        /// <exception cref="OrderRepositoryException">Thrown when an error occurs while updating the order.</exception>
         public async Task<Order> Update(Order item)
         {
             try
@@ -173,5 +235,7 @@ namespace PizzaStoreApp.Repositories
                 throw new OrderRepositoryException("Error in updating Order in the database: " + ex.Message, ex);
             }
         }
+
+        #endregion
     }
 }

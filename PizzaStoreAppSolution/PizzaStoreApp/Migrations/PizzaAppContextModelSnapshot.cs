@@ -49,48 +49,6 @@ namespace PizzaStoreApp.Migrations
                     b.HasKey("BeverageId");
 
                     b.ToTable("Beverages");
-
-                    b.HasData(
-                        new
-                        {
-                            BeverageId = 1,
-                            Image = "coca_cola.jpg",
-                            IsAvailable = true,
-                            Name = "Coca Cola",
-                            Price = 40.0m
-                        },
-                        new
-                        {
-                            BeverageId = 2,
-                            Image = "pepsi.jpg",
-                            IsAvailable = true,
-                            Name = "Pepsi",
-                            Price = 45.0m
-                        },
-                        new
-                        {
-                            BeverageId = 3,
-                            Image = "sprite.jpg",
-                            IsAvailable = true,
-                            Name = "Sprite",
-                            Price = 45.0m
-                        },
-                        new
-                        {
-                            BeverageId = 4,
-                            Image = "fanta.jpg",
-                            IsAvailable = true,
-                            Name = "Fanta",
-                            Price = 40.0m
-                        },
-                        new
-                        {
-                            BeverageId = 5,
-                            Image = "mountain_dew.jpg",
-                            IsAvailable = true,
-                            Name = "Mountain Dew",
-                            Price = 50.0m
-                        });
                 });
 
             modelBuilder.Entity("PizzaStoreApp.Models.Cart", b =>
@@ -264,6 +222,10 @@ namespace PizzaStoreApp.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("PaymentStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -296,6 +258,9 @@ namespace PizzaStoreApp.Migrations
 
                     b.Property<int?>("CrustId")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("DiscountPercent")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
@@ -372,21 +337,28 @@ namespace PizzaStoreApp.Migrations
                     b.Property<DateTime>("PaymentDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PaymentMethod")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<string>("PaymentStatus")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<string>("RazorpayOrderId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RazorpayPaymentId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RazorpaySignature")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("PaymentId");
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("Payment");
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("PizzaStoreApp.Models.Pizza", b =>
@@ -428,44 +400,6 @@ namespace PizzaStoreApp.Migrations
                     b.HasKey("PizzaId");
 
                     b.ToTable("Pizzas");
-
-                    b.HasData(
-                        new
-                        {
-                            PizzaId = 1,
-                            BasePrice = 200.00m,
-                            CreatedAt = new DateTime(2024, 7, 29, 15, 14, 57, 34, DateTimeKind.Local).AddTicks(1021),
-                            Description = "Classic delight with 100% real mozzarella cheese",
-                            ImageUrl = "margherita.jpg",
-                            IsAvailable = true,
-                            IsVegetarian = true,
-                            Name = "Margherita",
-                            UpdatedAt = new DateTime(2024, 7, 29, 15, 14, 57, 34, DateTimeKind.Local).AddTicks(1022)
-                        },
-                        new
-                        {
-                            PizzaId = 2,
-                            BasePrice = 220.00m,
-                            CreatedAt = new DateTime(2024, 7, 29, 15, 14, 57, 34, DateTimeKind.Local).AddTicks(1026),
-                            Description = "A classic American taste! Relish the delectable flavor of Chicken Pepperoni, topped with extra cheese",
-                            ImageUrl = "pepperoni.jpg",
-                            IsAvailable = true,
-                            IsVegetarian = false,
-                            Name = "Pepperoni",
-                            UpdatedAt = new DateTime(2024, 7, 29, 15, 14, 57, 34, DateTimeKind.Local).AddTicks(1027)
-                        },
-                        new
-                        {
-                            PizzaId = 3,
-                            BasePrice = 260.00m,
-                            CreatedAt = new DateTime(2024, 7, 29, 15, 14, 57, 34, DateTimeKind.Local).AddTicks(1031),
-                            Description = "Loaded with crunchy onions, crisp capsicum, juicy tomatoes and jalapeno with extra cheese",
-                            ImageUrl = "veggie_supreme.jpg",
-                            IsAvailable = true,
-                            IsVegetarian = true,
-                            Name = "Veggie Supreme",
-                            UpdatedAt = new DateTime(2024, 7, 29, 15, 14, 57, 34, DateTimeKind.Local).AddTicks(1032)
-                        });
                 });
 
             modelBuilder.Entity("PizzaStoreApp.Models.Size", b =>

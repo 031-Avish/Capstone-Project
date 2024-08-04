@@ -2,48 +2,81 @@
 using PizzaStoreApp.Exceptions.ServiceException;
 using PizzaStoreApp.Interfaces;
 using PizzaStoreApp.Models;
+using Microsoft.Extensions.Logging;
 
 namespace PizzaStoreApp.Services
 {
+    /// <summary>
+    /// Service for managing topping operations, including retrieving all toppings and topping by ID.
+    /// </summary>
     public class ToppingService : IToppingService
     {
-        private readonly IRepository<int,Topping> _toppingRepository;
+        private readonly IRepository<int, Topping> _toppingRepository;
+        private readonly ILogger<ToppingService> _logger;
 
-        public ToppingService(IRepository<int, Topping> toppingRepository)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToppingService"/> class.
+        /// </summary>
+        /// <param name="toppingRepository">Repository for managing topping data.</param>
+        /// <param name="logger">Logger instance for logging operations.</param>
+        public ToppingService(IRepository<int, Topping> toppingRepository, ILogger<ToppingService> logger)
         {
             _toppingRepository = toppingRepository;
+            _logger = logger;
         }
 
+        #region GetAllToppings Method
+
+        /// <summary>
+        /// Retrieves all toppings.
+        /// </summary>
+        /// <returns>List of <see cref="ToppingReturnDTO"/> objects.</returns>
+        /// <exception cref="ToppingServiceException">Thrown when an error occurs while retrieving toppings.</exception>
         public async Task<List<ToppingReturnDTO>> GetAllToppings()
         {
             try
             {
-                var Toppings = await _toppingRepository.GetAll();
-                if (Toppings == null)
+                _logger.LogInformation("Retrieving all toppings.");
+
+                var toppings = await _toppingRepository.GetAll();
+                if (toppings == null)
                 {
-                    throw new NotFoundException("No Toppings found");
+                    throw new NotFoundException("No toppings found");
                 }
-                List<ToppingReturnDTO> ToppingReturnDTOs = new List<ToppingReturnDTO>();
-                foreach (var Topping in Toppings)
+
+                List<ToppingReturnDTO> toppingReturnDTOs = new List<ToppingReturnDTO>();
+                foreach (var topping in toppings)
                 {
-                    ToppingReturnDTOs.Add(MapToppingWithToppingReturnDTO(Topping));
+                    toppingReturnDTOs.Add(MapToppingWithToppingReturnDTO(topping));
                 }
-                return ToppingReturnDTOs;
+                return toppingReturnDTOs;
             }
             catch (NotFoundException ex)
             {
+                _logger.LogWarning(ex, "Not found exception in GetAllToppings.");
                 throw;
             }
-            catch(ToppingRepositoryException ex)
+            catch (ToppingRepositoryException ex)
             {
+                _logger.LogError(ex, "Topping repository exception in GetAllToppings.");
                 throw;
             }
             catch (Exception ex)
             {
-                throw new ToppingServiceException("Error : " + ex.Message);
+                _logger.LogError(ex, "General error in GetAllToppings.");
+                throw new ToppingServiceException("Error: " + ex.Message, ex);
             }
         }
 
+        #endregion
+
+        #region MapToppingWithToppingReturnDTO Method
+
+        /// <summary>
+        /// Maps a topping entity to a <see cref="ToppingReturnDTO"/>.
+        /// </summary>
+        /// <param name="topping">The topping entity.</param>
+        /// <returns>A <see cref="ToppingReturnDTO"/> object.</returns>
         private ToppingReturnDTO MapToppingWithToppingReturnDTO(Topping topping)
         {
             return new ToppingReturnDTO
@@ -57,29 +90,46 @@ namespace PizzaStoreApp.Services
             };
         }
 
+        #endregion
+
+        #region GetToppingByToppingId Method
+
+        /// <summary>
+        /// Retrieves a topping by its ID.
+        /// </summary>
+        /// <param name="toppingId">The topping ID.</param>
+        /// <returns>A <see cref="ToppingReturnDTO"/> with the topping details.</returns>
+        /// <exception cref="ToppingServiceException">Thrown when an error occurs while retrieving the topping.</exception>
         public async Task<ToppingReturnDTO> GetToppingByToppingId(int toppingId)
         {
             try
             {
-                var Topping = await _toppingRepository.GetByKey(toppingId);
-                if (Topping == null)
+                _logger.LogInformation("Retrieving topping by ID: {ToppingId}", toppingId);
+
+                var topping = await _toppingRepository.GetByKey(toppingId);
+                if (topping == null)
                 {
-                    throw new NotFoundException("No Topping found");
+                    throw new NotFoundException("No topping found with ID " + toppingId);
                 }
-                return MapToppingWithToppingReturnDTO(Topping);
+                return MapToppingWithToppingReturnDTO(topping);
             }
             catch (NotFoundException ex)
             {
+                _logger.LogWarning(ex, "Not found exception in GetToppingByToppingId.");
                 throw;
             }
             catch (ToppingRepositoryException ex)
             {
+                _logger.LogError(ex, "Topping repository exception in GetToppingByToppingId.");
                 throw;
             }
             catch (Exception ex)
             {
-                throw new ToppingServiceException("Error : " + ex.Message);
+                _logger.LogError(ex, "General error in GetToppingByToppingId.");
+                throw new ToppingServiceException("Error: " + ex.Message, ex);
             }
         }
+
+        #endregion
     }
 }

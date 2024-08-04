@@ -2,21 +2,42 @@
 using PizzaStoreApp.Contexts;
 using PizzaStoreApp.Interfaces;
 using PizzaStoreApp.Models;
-
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using PizzaStoreApp.Exceptions.RepositoriesExceptions;
 
 namespace PizzaStoreApp.Repositories
 {
+    /// <summary>
+    /// Repository for managing order details.
+    /// </summary>
     public class OrderDetailRepository : IRepository<int, OrderDetail>
     {
         private readonly PizzaAppContext _context;
         private readonly ILogger<OrderDetailRepository> _logger;
 
-        public OrderDetailRepository(PizzaAppContext context,   ILogger<OrderDetailRepository> logger)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrderDetailRepository"/> class.
+        /// </summary>
+        /// <param name="context">The database context.</param>
+        /// <param name="logger">The logger instance.</param>
+        public OrderDetailRepository(PizzaAppContext context, ILogger<OrderDetailRepository> logger)
         {
             _context = context;
             _logger = logger;
         }
 
+        #region Add Method
+
+        /// <summary>
+        /// Adds a new order detail to the repository.
+        /// </summary>
+        /// <param name="item">The order detail to add.</param>
+        /// <returns>The added order detail.</returns>
+        /// <exception cref="OrderDetailRepositoryException">Thrown when an error occurs while adding the order detail.</exception>
         public async Task<OrderDetail> Add(OrderDetail item)
         {
             try
@@ -33,6 +54,17 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region DeleteByKey Method
+
+        /// <summary>
+        /// Deletes an order detail by its key.
+        /// </summary>
+        /// <param name="key">The key of the order detail to delete.</param>
+        /// <returns>The deleted order detail.</returns>
+        /// <exception cref="OrderDetailNotFoundException">Thrown when the order detail is not found.</exception>
+        /// <exception cref="OrderDetailRepositoryException">Thrown when an error occurs while deleting the order detail.</exception>
         public async Task<OrderDetail> DeleteByKey(int key)
         {
             try
@@ -60,6 +92,16 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region GetAll Method
+
+        /// <summary>
+        /// Gets all order details.
+        /// </summary>
+        /// <returns>A list of all order details.</returns>
+        /// <exception cref="OrderDetailNotFoundException">Thrown when no order details are found.</exception>
+        /// <exception cref="OrderDetailRepositoryException">Thrown when an error occurs while getting all order details.</exception>
         public async Task<IEnumerable<OrderDetail>> GetAll()
         {
             try
@@ -96,6 +138,17 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region GetByKey Method
+
+        /// <summary>
+        /// Gets an order detail by its key.
+        /// </summary>
+        /// <param name="key">The key of the order detail to retrieve.</param>
+        /// <returns>The retrieved order detail.</returns>
+        /// <exception cref="OrderDetailNotFoundException">Thrown when the order detail is not found.</exception>
+        /// <exception cref="OrderDetailRepositoryException">Thrown when an error occurs while getting the order detail.</exception>
         public async Task<OrderDetail> GetByKey(int key)
         {
             try
@@ -131,6 +184,17 @@ namespace PizzaStoreApp.Repositories
             }
         }
 
+        #endregion
+
+        #region Update Method
+
+        /// <summary>
+        /// Updates an order detail.
+        /// </summary>
+        /// <param name="item">The order detail to update.</param>
+        /// <returns>The updated order detail.</returns>
+        /// <exception cref="OrderDetailNotFoundException">Thrown when the order detail is not found.</exception>
+        /// <exception cref="OrderDetailRepositoryException">Thrown when an error occurs while updating the order detail.</exception>
         public async Task<OrderDetail> Update(OrderDetail item)
         {
             try
@@ -161,5 +225,7 @@ namespace PizzaStoreApp.Repositories
                 throw new OrderDetailRepositoryException("Error in updating OrderDetail in the database: " + ex.Message, ex);
             }
         }
+
+        #endregion
     }
 }

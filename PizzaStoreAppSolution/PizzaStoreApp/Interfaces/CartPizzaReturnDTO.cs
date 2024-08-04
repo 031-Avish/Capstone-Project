@@ -9,5 +9,6 @@
         public bool IsVegetarian { get; set; }
         public DateTime CreatedAt { get; set; }
         public int Quantity { get; set; }   
+        public string imageUrl { get; set; }
     }
 }

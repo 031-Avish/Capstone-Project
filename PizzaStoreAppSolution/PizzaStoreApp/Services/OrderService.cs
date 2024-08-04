@@ -3,7 +3,8 @@ using PizzaStoreApp.Contexts;
 using PizzaStoreApp.Exceptions.RepositoriesExceptions;
 using PizzaStoreApp.Interfaces;
 using PizzaStoreApp.Models;
-using PizzaStoreApp.Repositories;
+using Razorpay.Api;
+using Order = PizzaStoreApp.Models.Order;
 
 namespace PizzaStoreApp.Services
 {
@@ -15,7 +16,7 @@ namespace PizzaStoreApp.Services
         private readonly IRepository<int, Cart> _cartRepository;
         private readonly PizzaAppContext _context;
         private readonly IRepository<int, CartItem> _cartItemRepository;
-        private readonly IRepository<int,CartItemTopping> _cartItemToppingRepository;
+        private readonly IRepository<int, CartItemTopping> _cartItemToppingRepository;
 
         public OrderService(PizzaAppContext context, IRepository<int, Order> orderRepository, 
             IRepository<int, OrderDetail> orderDetailRepository, IRepository<int, OrderTopping> orderToppingRepository,
@@ -41,12 +42,12 @@ namespace PizzaStoreApp.Services
                     throw new OrderServiceException("Cart not found");
                 }
 
-                // Create a new order
+                // Create a new order where status is pending
                 var newOrder = new Order
                 {
                     UserId = addOrderDTO.UserId,
                     OrderDate = DateTime.UtcNow,
-                    TotalPrice = cart.TotalPrice,
+                    TotalPrice = CalculatePrice(ref cart),
                     DeliveryAddress = addOrderDTO.DeliveryAddress,
                     IsPickup = addOrderDTO.IsPickup,
                     OrderDetails = new List<OrderDetail>()
@@ -67,6 +68,7 @@ namespace PizzaStoreApp.Services
                         BeverageId = cartItem.BeverageId,
                         Quantity = cartItem.Quantity,
                         SubTotal = cartItem.SubTotal,
+                        DiscountPercent=cartItem.DiscountPercent,
                         OrderToppings = new List<OrderTopping>(),
                     };
 
@@ -87,21 +89,36 @@ namespace PizzaStoreApp.Services
 
                             // Add the new order topping to the database
                             await _orderToppingRepository.Add(newOrderTopping);
-                            await _cartItemRepository.DeleteByKey(cartItemTopping.ToppingId);
+                            //await _cartItemRepository.DeleteByKey(cartItemTopping.ToppingId);
                         }
                     }
-                    await _cartItemRepository.DeleteByKey(cartItem.CartItemId);
+                    //await _cartItemRepository.DeleteByKey(cartItem.CartItemId);
                 }
                 var orderToReturn = await _orderRepository.GetByKey(addedOrder.OrderId);
                 var orderReturnDto = await MapOrderToReturnDTO(orderToReturn);
+
+                string _rakey = "rzp_test_Wdjw0UYgMSS5xq";
+                string _raksecret = "gIv7e7Ft6eAXFKGkXcxEneWJ";
+                // Initialize Razorpay client
+                var client = new RazorpayClient(_rakey, _raksecret);
+
+                // Create Razorpay order options
+                var orderOptions = new Dictionary<string, object>
+                {
+                    { "amount", orderReturnDto.Total * 100 }, // Amount in paise
+                    { "currency", "INR" },
+                    { "receipt", Guid.NewGuid().ToString() }, // Generate a unique receipt id
+                    { "payment_capture", 1 }
+                };
+                
+                // Create Razorpay order
+                var orderResponse = client.Order.Create(orderOptions);
+                var razorpayOrderId = orderResponse["id"].ToString();
+
                 // Commit the transaction
                 await transaction.CommitAsync();
-
-
+                orderReturnDto.RorderID = razorpayOrderId;
                 // Return the created order details
-
-                
-
                 return orderReturnDto;
             }
             catch (CartRepositoryException ex)
@@ -154,6 +171,26 @@ namespace PizzaStoreApp.Services
                 await transaction.RollbackAsync();
                 throw new OrderServiceException("Error in adding Order to the database: " + ex.Message, ex);
             }
+        }
+
+        private decimal CalculatePrice(ref Cart cart)
+        {
+            // check if pizza is new ie. created in last 7 days for each cartitem
+            cart.TotalPrice = 0;
+            foreach (var cartItem in cart.CartItems)
+            {
+                // check for not beverage
+                if (cartItem.Pizza != null)
+                {
+                    if (cartItem.Pizza.CreatedAt.AddDays(7) >= DateTime.UtcNow)
+                    {
+                        cartItem.SubTotal *= 0.9m;
+                        cartItem.DiscountPercent = 10;
+                    }
+                }
+                cart.TotalPrice += cartItem.SubTotal;
+            }
+            return cart.TotalPrice;
         }
 
         public async Task<OrderReturnDTO> CancelOrder(int orderId)
@@ -269,6 +306,69 @@ namespace PizzaStoreApp.Services
             }
         }
 
+        public async Task UpdateOrderStatus(int cartId,int orderId, string status)
+        {
+            try
+            {
+                var order =await _orderRepository.GetByKey(orderId);
+                if (order == null)
+                {
+                    throw new OrderServiceException("Order not found");
+                }
+                order.PaymentStatus = status;
+                order.Status = status;
+                await _orderRepository.Update(order);
+
+                // if success then remove from cart 
+                if(status == "Success")
+                {
+                    var cart = await _cartRepository.GetByKey(cartId);
+                    if (cart == null)
+                    {
+                        throw new OrderServiceException("Cart not found");
+                    }
+                    foreach (var cartItem in cart.CartItems)
+                    {
+                        // there is toppings then delete toppings
+                        if (cartItem.CartItemToppings.Any())
+                        {
+                            foreach (var cartItemTopping in cartItem.CartItemToppings)
+                            {
+                                await _cartItemToppingRepository.DeleteByKey(cartItemTopping.CartItemToppingId);
+                            }
+                        }
+                        await _cartItemRepository.DeleteByKey(cartItem.CartItemId);
+                    }
+                    cart.TotalPrice = 0;
+                    await _cartRepository.Update(cart);
+                }
+            }
+            catch (CartRepositoryException ex)
+            {
+                throw;
+            }
+            catch (CartItemRepositoryException ex)
+            {
+                throw;
+            }
+            catch(CartItemToppingRepositoryException ex)
+            {
+                throw;
+            }
+            catch (OrderRepositoryException ex)
+            {
+                throw;
+            }
+            catch (OrderServiceException ex)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new OrderServiceException("Error in updating Order status: " + ex.Message, ex);
+            }
+        }
+
         private async Task<OrderReturnDTO> MapOrderToReturnDTO(Order order)
         {
             return new OrderReturnDTO
@@ -326,5 +426,36 @@ namespace PizzaStoreApp.Services
             };
         }
 
+        public async Task<OrderReturnDTO> UpdateOrderStatusByAdmin(UpdateOrderDTO updateDTO)
+        {
+            try
+            {
+                var order =await _orderRepository.GetByKey(updateDTO.OrderId);
+                if (order == null)
+                {
+                    throw new OrderServiceException("Order not found");
+                }
+                order.Status = updateDTO.Status;
+                var updatedOrder = await _orderRepository.Update(order);
+                var orderToReturn = await _orderRepository.GetByKey(updatedOrder.OrderId);
+                return await MapOrderToReturnDTO(orderToReturn);
+            }
+            catch(OrderRepositoryException ex)
+            {
+                throw;
+            }
+            catch(OrderNotFoundException ex)
+            {
+                throw;
+            }
+            catch(OrderServiceException ex)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new OrderServiceException("Error in updating Order status by Admin: " + ex.Message, ex);
+            }
+        }
     }
 }

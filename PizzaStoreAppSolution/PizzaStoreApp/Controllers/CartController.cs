@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PizzaStoreApp.Exceptions.RepositoriesExceptions;
@@ -22,7 +23,7 @@ namespace PizzaStoreApp.Controllers
             _cartService = cartService;
             _logger = logger;
         }
-
+        //[Authorize(Roles = "User")]
         [HttpPost("add")]
         [ProducesResponseType(typeof(CartReturnDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
@@ -101,7 +102,7 @@ namespace PizzaStoreApp.Controllers
                 return StatusCode(500, new ErrorModel(500, "Unexpected Error: " + ex.Message));
             }
         }
-
+        //[Authorize(Roles = "User")]
         [HttpGet("user/{userId}")]
         [ProducesResponseType(typeof(CartReturnDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
@@ -119,6 +120,11 @@ namespace PizzaStoreApp.Controllers
                 _logger.LogWarning("Cart not found: {Message}", ex.Message);
                 return NotFound(new ErrorModel(404, "Cart not found: " + ex.Message));
             }
+            catch(CartRepositoryException ex)
+            {
+                _logger.LogError("Cart repository error: {Message}", ex.Message);
+                return StatusCode(500, new ErrorModel(500, "Internal Server Error: " + ex.Message));
+            }
             catch (CartServiceException ex)
             {
                 _logger.LogError("Cart service error: {Message}", ex.Message);
@@ -130,7 +136,7 @@ namespace PizzaStoreApp.Controllers
                 return StatusCode(500, new ErrorModel(500, "Unexpected Error: " + ex.Message));
             }
         }
-
+        //[Authorize(Roles = "User")]
         [HttpPost("remove")]
         [ProducesResponseType(typeof(CartReturnDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
@@ -153,18 +159,28 @@ namespace PizzaStoreApp.Controllers
                 _logger.LogError("Cart service error: {Message}", ex.Message);
                 return StatusCode(500, new ErrorModel(500, "Internal Server Error: " + ex.Message));
             }
+            catch (CartItemNotFoundException ex)
+            {
+                _logger.LogError("Cart item not found: {Message}", ex.Message);
+                return NotFound(new ErrorModel(404, "Cart item not found: " + ex.Message));
+            }
+            catch (CartItemToppingNotFoundException ex)
+            {
+                _logger.LogError("cart item toppings not found : {Message} ", ex.Message);
+                return NotFound(new ErrorModel(404, "Cart item toppings not found: " + ex.Message));
+            }
             catch (Exception ex)
             {
                 _logger.LogError("Unexpected error: {Message}", ex.Message);
                 return StatusCode(500, new ErrorModel(500, "Unexpected Error: " + ex.Message));
             }
         }
-
+        //[Authorize(Roles = "User")]
         [HttpPut("update")]
         [ProducesResponseType(typeof(CartReturnDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateCart([FromBody] UpdateCartItemDTO updateCartDTO)
+        public async Task<IActionResult> UpdateCart( UpdateCartItemDTO updateCartDTO)
         {
             try
             {
@@ -174,13 +190,38 @@ namespace PizzaStoreApp.Controllers
             }
             catch (NotFoundException ex)
             {
-                _logger.LogWarning("Cart item or related data not found: {Message}", ex.Message);
-                return NotFound(new ErrorModel(404, "Cart item or related data not found: " + ex.Message));
+                _logger.LogWarning("No pizzas found: {Message}", ex.Message);
+                return NotFound(new ErrorModel(404, ex.Message));
             }
-            catch (CartServiceException ex)
+            catch (PizzaRepositoryException ex)
             {
-                _logger.LogError("Cart service error: {Message}", ex.Message);
+                _logger.LogError("Pizza repository error: {Message}", ex.Message);
                 return StatusCode(500, new ErrorModel(500, "Internal Server Error: " + ex.Message));
+            }
+            catch (SizeRepositoryException ex)
+            {
+                _logger.LogError("Size repository error: {Message}", ex.Message);
+                return StatusCode(500, new ErrorModel(500, "Internal Server Error: " + ex.Message));
+            }
+            catch (CrustRepositoryException ex)
+            {
+                _logger.LogError("Crust repository error: {Message}", ex.Message);
+                return StatusCode(500, new ErrorModel(500, "Internal Server Error: " + ex.Message));
+            }
+            catch (PizzaServiceException ex)
+            {
+                _logger.LogError("Pizza service error: {Message}", ex.Message);
+                return StatusCode(500, new ErrorModel(500, "Internal Server Error: " + ex.Message));
+            }
+            catch (CartItemNotFoundException ex)
+            {
+                _logger.LogError("Cart item not found: {Message}", ex.Message);
+                return NotFound(new ErrorModel(404, "Cart item not found: " + ex.Message));
+            }
+            catch (CartItemToppingNotFoundException ex)
+            {
+                _logger.LogError("cart item toppings not found : {Message} ", ex.Message);
+                return NotFound(new ErrorModel(404, "Cart item toppings not found: " + ex.Message));
             }
             catch (Exception ex)
             {

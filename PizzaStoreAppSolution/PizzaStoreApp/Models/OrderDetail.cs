@@ -32,7 +32,7 @@ namespace PizzaStoreApp.Models
         
         [Range(0, double.MaxValue)]
         public decimal SubTotal { get; set; }
-
+        public decimal DiscountPercent { get; set; } = 0;
         public ICollection<OrderTopping> OrderToppings { get; set; }
     }
 }

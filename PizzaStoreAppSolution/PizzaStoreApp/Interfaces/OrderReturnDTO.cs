@@ -8,5 +8,7 @@
         public Decimal Total { get; set; }
         public DateTime OrderDate { get; set; }
         public string OrderStatus { get; set; }
+
+        public string? RorderID { get; set; }
     }
 }

@@ -36,6 +36,8 @@ namespace PizzaStoreApp.Services
             {
                 new Claim("Id", user.UserId.ToString()),
                 new Claim("role", user.Role),
+                new Claim("email", user.Email),
+                new Claim("name", user.Name),   
                 new Claim(ClaimTypes.Role,user.Role),
                 new Claim(ClaimTypes.Email,user.Email)
             };

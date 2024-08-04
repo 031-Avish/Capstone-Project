@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using PizzaStoreApp.Exceptions.RepositoriesExceptions;
 using PizzaStoreApp.Exceptions.ServiceException;
 using PizzaStoreApp.Interfaces;
 using PizzaStoreApp.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using PizzaStoreApp.Services;
+
 
 namespace PizzaStoreApp.Controllers
 {
@@ -23,6 +22,12 @@ namespace PizzaStoreApp.Controllers
             _logger = logger;
         }
 
+        #region GetAllBeverages
+        /// <summary>
+        /// Retrieves all beverages.
+        /// </summary>
+        /// <returns>A list of all beverages.</returns>
+        //[Authorize(Roles = "User")]
         [HttpGet("all")]
         [ProducesResponseType(typeof(List<BeverageReturnDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
@@ -55,7 +60,50 @@ namespace PizzaStoreApp.Controllers
                 return StatusCode(500, new ErrorModel(500, "Unexpected Error: " + ex.Message));
             }
         }
+        #endregion
 
+        #region AddBeverage
+        /// <summary>
+        /// Adds a new beverage.
+        /// </summary>
+        /// <param name="beverageDTO">The details of the beverage to be added.</param>
+        /// <returns>The added beverage.</returns>
+        //[Authorize(Roles="Admin")]
+        [HttpPost("add")]
+        [ProducesResponseType(typeof(BeverageReturnDTO), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> AddBeverage([FromForm] BeverageDTO beverageDTO)
+        {
+            try
+            {
+                var beverage = await _beverageService.AddBeverage(beverageDTO);
+                _logger.LogInformation("Added beverage with id {BeverageId} successfully.", beverage.BeverageId);
+                return Ok(beverage);
+            }
+            catch (BeverageRepositoryException ex)
+            {
+                _logger.LogError("Error in Beverage repository: {Message}", ex.Message);
+                return StatusCode(500, new ErrorModel(500, "Internal Server Error: " + ex.Message));
+            }
+            catch (BeverageServiceException ex)
+            {
+                _logger.LogError("Error in Beverage service: {Message}", ex.Message);
+                return StatusCode(500, new ErrorModel(500, "Internal Server Error: " + ex.Message));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Unexpected error: {Message}", ex.Message);
+                return StatusCode(500, new ErrorModel(500, "Unexpected Error: " + ex.Message));
+            }
+        }
+        #endregion
+
+        #region GetBeverageById
+        /// <summary>
+        /// Retrieves a beverage by its ID.
+        /// </summary>
+        /// <param name="beverageId">The ID of the beverage to retrieve.</param>
+        /// <returns>The requested beverage.</returns>
         [HttpGet("{beverageId}")]
         [ProducesResponseType(typeof(BeverageReturnDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
@@ -89,5 +137,6 @@ namespace PizzaStoreApp.Controllers
                 return StatusCode(500, new ErrorModel(500, "Unexpected Error: " + ex.Message));
             }
         }
+        #endregion
     }
 }

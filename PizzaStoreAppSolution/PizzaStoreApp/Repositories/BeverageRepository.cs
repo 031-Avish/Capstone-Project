@@ -3,20 +3,38 @@ using PizzaStoreApp.Models;
 using Microsoft.EntityFrameworkCore;
 using PizzaStoreApp.Contexts;
 using PizzaStoreApp.Exceptions.RepositoriesExceptions;
+using Microsoft.Extensions.Logging;
 
 namespace PizzaStoreApp.Repositories
 {
+    /// <summary>
+    /// Repository for managing beverages.
+    /// </summary>
     public class BeverageRepository : IRepository<int, Beverage>
     {
         private readonly PizzaAppContext _context;
         private readonly ILogger<BeverageRepository> _logger;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BeverageRepository"/> class.
+        /// </summary>
+        /// <param name="context">The database context.</param>
+        /// <param name="logger">The logger instance.</param>
         public BeverageRepository(PizzaAppContext context, ILogger<BeverageRepository> logger)
         {
             _context = context;
             _logger = logger;
         }
 
+
+        /// <summary>
+        /// Adds a new beverage to the repository.
+        /// </summary>
+        /// <param name="item">The beverage to add.</param>
+        /// <returns>The added beverage.</returns>
+        /// <exception cref="DuplicateBeverageException">Thrown when a beverage with the same name already exists.</exception>
+        /// <exception cref="BeverageRepositoryException">Thrown when an error occurs while adding the beverage.</exception>
+        #region Add Beverage
         public async Task<Beverage> Add(Beverage item)
         {
             try
@@ -44,7 +62,16 @@ namespace PizzaStoreApp.Repositories
                 throw new BeverageRepositoryException("Error occurred while adding beverage." + ex.Message, ex);
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Deletes a beverage by its key.
+        /// </summary>
+        /// <param name="key">The key of the beverage to delete.</param>
+        /// <returns>The deleted beverage.</returns>
+        /// <exception cref="BeverageNotFoundException">Thrown when the beverage is not found.</exception>
+        /// <exception cref="BeverageRepositoryException">Thrown when an error occurs while deleting the beverage.</exception>
+        #region Delete Beverage
         public async Task<Beverage> DeleteByKey(int key)
         {
             try
@@ -72,7 +99,14 @@ namespace PizzaStoreApp.Repositories
                 throw new BeverageRepositoryException("Error occurred while deleting beverage." + ex.Message, ex);
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Gets all beverages.
+        /// </summary>
+        /// <returns>A list of all beverages.</returns>
+        /// <exception cref="BeverageRepositoryException">Thrown when an error occurs while getting the beverages.</exception>
+        #region Get All Beverages
         public async Task<IEnumerable<Beverage>> GetAll()
         {
             try
@@ -93,7 +127,15 @@ namespace PizzaStoreApp.Repositories
                 throw new BeverageRepositoryException("Error occurred while getting all beverages." + ex.Message, ex);
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Gets a beverage by its key.
+        /// </summary>
+        /// <param name="key">The key of the beverage to retrieve.</param>
+        /// <returns>The retrieved beverage.</returns>
+        /// <exception cref="BeverageRepositoryException">Thrown when an error occurs while getting the beverage.</exception>
+        #region Get Beverage By Key
         public async Task<Beverage> GetByKey(int key)
         {
             try
@@ -114,7 +156,16 @@ namespace PizzaStoreApp.Repositories
                 throw new BeverageRepositoryException("Error occurred while getting beverage by Id." + ex.Message, ex);
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Updates a beverage.
+        /// </summary>
+        /// <param name="item">The beverage to update.</param>
+        /// <returns>The updated beverage.</returns>
+        /// <exception cref="BeverageNotFoundException">Thrown when the beverage is not found.</exception>
+        /// <exception cref="BeverageRepositoryException">Thrown when an error occurs while updating the beverage.</exception>
+        #region Update Beverage
         public async Task<Beverage> Update(Beverage item)
         {
             try
@@ -138,5 +189,7 @@ namespace PizzaStoreApp.Repositories
                 throw new BeverageRepositoryException("Error occurred while updating beverage." + ex.Message, ex);
             }
         }
+
+        #endregion
     }
 }

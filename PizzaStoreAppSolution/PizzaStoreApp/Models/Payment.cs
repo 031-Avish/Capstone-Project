@@ -13,10 +13,9 @@ namespace PizzaStoreApp.Models
         public Order Order { get; set; }
         [Required]
         public decimal Amount { get; set; }
-        [Required]
-        [MaxLength(50)]
-        public string PaymentMethod { get; set; }
-        [Required]
+        public string RazorpayPaymentId { get; set; }
+        public string RazorpayOrderId { get; set; }
+        public string RazorpaySignature { get; set; }
         public DateTime PaymentDate { get; set; } = DateTime.Now;
         [Required]
         [MaxLength(20)]
