@@ -19,7 +19,8 @@ namespace PizzaStoreApp.Services
         /// <param name="logger">Logger instance for logging operations.</param>
         public BlobService(IConfiguration configuration, ILogger<BlobService> logger)
         {
-            var connectionString = configuration.GetConnectionString("AzureBlobStorage");
+            //var connectionString = configuration.GetConnectionString("AzureBlobStorage");
+            var connectionString = Environment.GetEnvironmentVariable("AZURE_BLOB_URI");
             _blobServiceClient = new BlobServiceClient(connectionString);
             _containerName = "pizzaapp";
             _logger = logger;

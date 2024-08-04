@@ -19,7 +19,7 @@ namespace PizzaStoreApp.Controllers
             _orderService = orderService;
             _logger = logger;
         }
-
+        //[Authorize(Roles = "User")]
         [HttpPost("add")]
         [ProducesResponseType(typeof(OrderReturnDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status400BadRequest)]
@@ -74,6 +74,7 @@ namespace PizzaStoreApp.Controllers
             }
         }
 
+        //[Authorize(Roles = "User")]
         [HttpPut("cancel/{orderId}")]
         [ProducesResponseType(typeof(OrderReturnDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
@@ -102,7 +103,7 @@ namespace PizzaStoreApp.Controllers
                 return StatusCode(500, new ErrorModel(500, "Unexpected Error: " + ex.Message));
             }
         }
-
+        //[Authorize(Roles = "User")]
         [HttpGet("user/{userId}")]
         [ProducesResponseType(typeof(List<OrderReturnDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
@@ -137,6 +138,7 @@ namespace PizzaStoreApp.Controllers
             }
         }
 
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         [ProducesResponseType(typeof(List<OrderReturnDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
@@ -203,6 +205,8 @@ namespace PizzaStoreApp.Controllers
                 return StatusCode(500, new ErrorModel(500, "Unexpected Error: " + ex.Message));
             }
         }
+
+        //[Authorize(Roles = "Admin")]
         [HttpPut("updateStatus")]
         [ProducesResponseType(typeof(OrderReturnDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
